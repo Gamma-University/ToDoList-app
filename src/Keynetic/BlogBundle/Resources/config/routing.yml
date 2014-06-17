@@ -1,0 +1,7 @@
+keynetic_blog_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: KeyneticBlogBundle:Default:index }
+
+homepage:
+    path:     /hello-world
+    defaults: { _controller: KeyneticBlogBundle:Blog:index }

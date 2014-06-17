@@ -1,0 +1,7 @@
+
+    {% if toDo.done %}
+        <p><del>{{ toDo.description }}</del>&nbsp-&nbsp<a href="{{ path('modifier', {'id': toDo.id} ) }}">editer</a>
+    {% else %}
+        <p>{{ toDo.description }}&nbsp-&nbsp<a href="{{ path('modifier', {'id': toDo.id} ) }}">editer</a><p>
+    {% endif %}
+

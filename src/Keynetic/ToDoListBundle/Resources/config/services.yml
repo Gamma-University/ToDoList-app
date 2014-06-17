@@ -1,0 +1,7 @@
+parameters:
+#    keynetic_to_do_list.example.class: Keynetic\ToDoListBundle\Example
+
+services:
+#    keynetic_to_do_list.example:
+#        class: %keynetic_to_do_list.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

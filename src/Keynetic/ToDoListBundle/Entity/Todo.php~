@@ -1,0 +1,60 @@
+<?php
+
+namespace Keynetic\ToDoListBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Todo
+ *
+ * @ORM\Table(name="todo")
+ * @ORM\Entity
+ */
+class Todo
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="created_on", type="datetime", nullable=false)
+     */
+    private $createdOn;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="last_modified_on", type="datetime", nullable=false)
+     */
+    private $lastModifiedOn;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="string", length=100, nullable=true)
+     */
+    private $description;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=100, nullable=false)
+     */
+    private $status = 'ACTIVE';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean", nullable=false)
+     */
+    private $deleted = '0';
+
+
+}

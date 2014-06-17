@@ -1,0 +1,10 @@
+keynetic_to_do_list:
+    resource: "@KeyneticToDoListBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+keynetic_blog:
+    resource: "@KeyneticBlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
+

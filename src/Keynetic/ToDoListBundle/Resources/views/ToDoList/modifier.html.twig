@@ -1,0 +1,39 @@
+{% extends "KeyneticToDoListBundle::layout.html.twig" %}
+
+{% block KeyneticToDoList_body %}
+ 
+
+        <form method="post" {{ form_enctype(form) }}>
+            <div class="col-xs-4">
+                {# Les erreurs générales du formulaire. #}
+                {{ form_errors(form) }}
+
+                {# Affichage des erreurs pour ce champ précis. #}
+                {{ form_errors(form.description) }}
+
+                {# Génération de l'input. #}
+                {{ form_widget(form.description,  {'attr': {'class': 'form-control'} }) }}
+
+                {{ form_rest(form) }}
+            </div>
+            <div class="col-xs-2">
+                <input type="submit" class="btn btn-primary" value="Modifier"/>
+            </div>
+        </form>
+        <div class="col-xs-2">
+            <form method="post" {{ form_enctype(supprimerForm) }}>
+
+                {# Les erreurs générales du formulaire. #}
+                {{ form_errors(supprimerForm) }}
+
+                {# Génération de l'input. #}
+                {{ form_widget(supprimerForm) }}
+
+                {{ form_rest(supprimerForm) }}
+                <input type="submit" class="btn btn-danger" value="Supprimer"/>
+
+            </form>
+        </div>
+   
+
+{% endblock %}

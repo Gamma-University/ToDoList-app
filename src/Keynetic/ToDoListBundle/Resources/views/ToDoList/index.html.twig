@@ -1,0 +1,38 @@
+{% extends "KeyneticToDoListBundle::layout.html.twig" %}
+
+{% block KeyneticToDoList_body %}
+<div>
+    <form method="post" {{ form_enctype(newToDoForm) }}>
+        <div class="col-xs-4">
+            {# Les erreurs générales du formulaire. #}
+            {{ form_errors(newToDoForm) }}
+
+
+            {# Affichage des erreurs pour ce champ précis. #}
+            {{ form_errors(newToDoForm.description) }}
+
+            {# Génération de l'input. #}
+            {{ form_widget(newToDoForm.description,  {'attr': {'class': 'form-control', 'placeholder': 'Encore du travail ?'} }) }}
+
+            {{ form_rest(newToDoForm) }}
+        </div>
+        <div class="col-xs-8">
+            <input type="submit" class="btn btn-primary " value="Ajouter"/>
+        </div>
+    </form>
+</div>
+<div class="col-xs-4">
+    {% for toDo in toDoList %}
+        {% include "KeyneticToDoListBundle:ToDoList:todo.html.twig" with {'accueil': true} %}
+
+        {% else %}
+
+            <p>Pas encore de travail !</p>
+
+            {% endfor %}
+
+
+            </div>
+
+            {% endblock %}
+

@@ -1,0 +1,41 @@
+Todo:
+    type: entity
+    table: todo
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: true
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        createdOn:
+            type: datetime
+            nullable: false
+            comment: ''
+            column: created_on
+        lastModifiedOn:
+            type: datetime
+            nullable: true
+            comment: ''
+            column: last_modified_on
+        description:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            comment: ''
+        done:
+            type: boolean
+            nullable: false
+            fixed: false
+            comment: ''
+            default: false
+        deleted:
+            type: boolean
+            nullable: false
+            comment: ''
+            default: false
+    lifecycleCallbacks: {  }
